@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>List</title>
+</head>
+<body>
+<h2>Board List</h2>
+
+<table border="1">
+    <tr>
+        <th align="center" width="80">userNo</th>
+        <th align="center" width="80">userId</th>
+        <th align="center" width="80">userPw</th>
+        <th align="center" width="80">userName</th>
+    </tr>
+    <tr th:if="${#lists.isEmpty(list)}">
+        <td colspan="4">
+            List is Empty
+        </td>
+    </tr>
+    <tr th:each="board: ${list}">
+        <td align="center" th:text="${board.userNo}">
+            ${board.userNo}
+        </td>
+        <td align="right" th:text="${board.userId}">
+            ${board.userId}
+        </td>
+        <td align="right" th:text="${board.userPw}">
+            ${board.userPw}
+        </td>
+        <td align="right" th:text="${board.userName}">
+            ${board.userName}
+        </td>
+    </tr>
+</table>
+</body>
+</html>
